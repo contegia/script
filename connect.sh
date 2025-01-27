@@ -2,6 +2,8 @@
 ########
 #Created by anton 27.03.2024
 ########
+#secure protocol rdp
+#/sec:[rdp|tls|nla|ext]
 ip_server=$1
 user_server=$2
 user_pass=$3
@@ -26,7 +28,7 @@ if [ -z "$user_pass" ]; then
 fi
 function rconnect() {
         echo Start process server:$ip_server of user: $user_server is:$time_start >> $status_f 
-        xvfb-run xfreerdp /cert-ignore /u:"$user_server" /p:"$user_pass" /v:"$ip_server:$port_server"
+        xvfb-run xfreerdp /sec:rdp /cert-ignore /u:"$user_server" /p:"$user_pass" /v:"$ip_server:$port_server"
         }
 function rclosed() {
         sleep 20
