@@ -4,6 +4,8 @@
 ########
 #secure protocol rdp
 #/sec:[rdp|tls|nla|ext]
+#apt install freerdp2-x11
+#apt install xvfb
 ip_server=$1
 user_server=$2
 user_pass=$3
